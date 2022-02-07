@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Pathoschild.Stardew.TractorMod.Framework.Config;
@@ -21,7 +22,7 @@ namespace Pathoschild.Stardew.TractorMod.Framework.Attachments
 
         /// <summary>The axe upgrade levels needed to break supported resource clumps.</summary>
         /// <remarks>Derived from <see cref="ResourceClump.performToolAction"/>.</remarks>
-        private readonly IDictionary<int, int> ResourceUpgradeLevelsNeeded = new Dictionary<int, int>
+        private readonly IDictionary<string, int> ResourceUpgradeLevelsNeeded = new Dictionary<string, int>
         {
             [ResourceClump.meteoriteIndex] = Tool.gold,
             [ResourceClump.boulderIndex] = Tool.steel
@@ -98,7 +99,7 @@ namespace Pathoschild.Stardew.TractorMod.Framework.Attachments
             // 'need to upgrade your tool' messages. Based on ResourceClump.performToolAction.
             if (this.Config.ClearBouldersAndMeteorites)
             {
-                ResourceClump clump = this.GetResourceClumpCoveringTile(location, tile, player, out var applyTool);
+                ResourceClump clump = this.GetResourceClumpCoveringTile(location, tile, player, out Func<Tool, bool> applyTool);
                 if (clump != null && (!this.ResourceUpgradeLevelsNeeded.TryGetValue(clump.parentSheetIndex.Value, out int requiredUpgradeLevel) || tool.UpgradeLevel >= requiredUpgradeLevel))
                 {
                     applyTool(tool);
