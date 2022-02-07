@@ -1,6 +1,10 @@
 ﻿[← back to readme](README.md)
 
 # Release notes
+## Upcoming release for Stardew Valley 1.6
+* Updated for Stardew Valley 1.6.
+* Added more seed info for tree lookups.
+
 ## Upcoming release
 * Added support for custom NPC roommates.
 

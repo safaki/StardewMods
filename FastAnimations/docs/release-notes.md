@@ -1,6 +1,9 @@
 ﻿[← back to readme](README.md)
 
 # Release notes
+## Upcoming release for Stardew Valley 1.6
+* Updated for Stardew Valley 1.6.
+
 ## Upcoming release
 * Added support for horse flute animation.
 * Improved translations. Thanks to ChulkyBow (updated Ukrainian)!

@@ -9,6 +9,9 @@ When releasing a format change, don't forget to update the smapi.io/json schema!
 
 
 -->
+## Upcoming release for Stardew Valley 1.6
+* Updated for Stardew Valley 1.6.
+
 ## Upcoming release
 * Added support for [config UI sections](author-guide/config.md#display-options) (thanks to Shockah!).
 * Updated for the upcoming SMAPI 4.0.0.
