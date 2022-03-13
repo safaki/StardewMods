@@ -11,9 +11,6 @@ namespace Pathoschild.Stardew.Automate.Framework.Models
         /*********
         ** Accessors
         *********/
-        /// <summary>The name to use for each floor ID.</summary>
-        public Dictionary<int, DataModelFloor> FloorNames { get; set; } = new();
-
         /// <summary>Mods which add custom machine recipes and require a separate automation component.</summary>
         public DataModelIntegration[] SuggestedIntegrations { get; set; } = Array.Empty<DataModelIntegration>();
 
@@ -29,7 +26,6 @@ namespace Pathoschild.Stardew.Automate.Framework.Models
         [OnDeserialized]
         public void OnDeserialized(StreamingContext context)
         {
-            this.FloorNames ??= new();
             this.SuggestedIntegrations ??= Array.Empty<DataModelIntegration>();
             this.DefaultMachineOverrides = this.DefaultMachineOverrides.ToNonNullCaseInsensitive();
         }
